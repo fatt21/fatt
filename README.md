@@ -16,6 +16,8 @@ this will download and pre-process the necessary dataset, will train decision tr
 
 **Note**: code in this repository runs CPU-intense machine learning training and verification tasks, which may be not suitable for home computers. Most experiment are repeated a number of times (usually 1000) to ensure statistical relevance, resulting in high running time and overall computational costs.
 
+**Note 2**: This repository is intended as a snapshot to allow experimental replication and will not be maintained. Please refer to https://github.com/abstract-machine-learning/meta-silvae for questions, issues or contributions.
+
 ## Requirements
 
 * Python3
