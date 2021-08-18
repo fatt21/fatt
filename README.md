@@ -1,6 +1,6 @@
 # FATT
 
-FATT is a renaming of  https://github.com/abstract-machine-learning/meta-silvae to ensure a blind review process. This repository allows to replicate experimental data.
+FATT is a renaming of  https://github.com/abstract-machine-learning/meta-silvae for a software artifact for a CIKM 2021 paper. This repository allows to replicate experimental data.
 
 ## Experiments
 
