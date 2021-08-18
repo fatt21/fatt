@@ -1,0 +1,70 @@
+########################################################################
+# Configuration
+set terminal pdf
+set border 2
+set style data boxplot
+set style fill solid 0.33
+set xtics border in scale 0,0
+set ytics nomirror
+unset key
+
+set terminal pdf color enhanced
+set size 1,1
+set autoscale
+unset label
+set ytic auto
+set grid
+
+set style line 1  lt 1 pt 7  ps 1.3 lw 4 linecolor rgb "#DF2B1C"
+set style line 2  lt 1 pt 5  ps 1.3 lw 4 linecolor rgb "#31A736"
+set style line 3  lt 1 pt 9  ps 1.3 lw 4 linecolor rgb "#3151A7"
+set style line 4  lt 1 pt 11 ps 1.3 lw 4 linecolor rgb "#F9D235"
+set style line 5  lt 1 pt 13 ps 1.3 lw 4 linecolor rgb "#35A1F9"
+set style line 6  lt 1 pt 15 ps 1.3 lw 4 linecolor rgb "#F935A2"
+
+set style line 7  lt 2 pt 6  ps 1.3 lw 4 linecolor rgb "#DE662F"
+set style line 8  lt 2 pt 4  ps 1.3 lw 4 linecolor rgb "#9AA731"
+set style line 9  lt 2 pt 8  ps 1.3 lw 4 linecolor rgb "#2FC5DE"
+set style line 10 lt 2 pt 10 ps 1.3 lw 4 linecolor rgb "#DED22F"
+set style line 11 lt 2 pt 12 ps 1.3 lw 4 linecolor rgb "#6FA4C6"
+set style line 12 lt 2 pt 15 ps 1.3 lw 4 linecolor rgb "#FF81C9"
+
+
+########################################################################
+# Accuracy
+set output 'results/plot-accuracy.pdf'
+set title "Distribution of Accuracy over different Trainings"
+set ylabel "Accuracy \%"
+plot 'results/plot-metrics.csv' using (1):($3*100):(0):1 pointsize .1 lc variable
+
+
+########################################################################
+# Balanced accuracy
+set output 'results/plot-balanced-accuracy.pdf'
+set title "Distribution of Balanced Accuracy over different Trainings"
+set ylabel "Balanced Accuracy \%"
+plot 'results/plot-metrics.csv' using (1):($4*100):(0):1 pointsize .1 lc variable
+
+
+########################################################################
+# Fairness
+set output 'results/plot-fairness.pdf'
+set title "Distribution of Fairness over different Trainings"
+set ylabel "Fairness \%"
+plot 'results/plot-metrics.csv' using (1):($5*100):(0):1 pointsize .1 lc variable
+
+
+########################################################################
+# Average time
+set output 'results/plot-time.pdf'
+set title "Distribution of Average Verification Time over different Trainings"
+set ylabel "Average Verification Time (ms)"
+plot 'results/plot-metrics.csv' using (1):($6/$7*1000):(0):1 pointsize .1 lc variable
+
+
+########################################################################
+# Model size
+set output 'results/plot-size.pdf'
+set title "Distribution of Model Size over different Trainings"
+set ylabel "Model Size (\# of leaves)"
+plot 'results/plot-metrics.csv' using (1):8:(0):1 pointsize .1 lc variable
