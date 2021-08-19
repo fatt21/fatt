@@ -1,6 +1,6 @@
 # FATT
 
-FATT is a renaming of  https://github.com/abstract-machine-learning/meta-silvae for a software artifact for a CIKM 2021 paper. This repository allows to replicate experimental data.
+FATT is an instantiation of  https://github.com/abstract-machine-learning/meta-silvae providing a software artifact for the CIKM 2021 paper "Fairness-Aware Training of Decision Trees by Abstract Interpretation" by Francesco Ranzato, Caterina Urban, and Marco Zanella. This repository allows to replicate the experimental data described in the paper.
 
 ## Experiments
 
